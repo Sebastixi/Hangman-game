@@ -1,3 +1,5 @@
+<?php
+session_start();?>
 <!DOCTYPE html>
 <html lang="en">
     <head>
@@ -14,6 +16,21 @@
         <link href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet" />
         <!-- Core theme CSS (includes Bootstrap)-->
         <link href="css/styles.css" rel="stylesheet" />
+        <script src="jquery.js"></script>
+        <script>
+            $(document).ready(function(){ 
+                $("#btnSuccess").click(function(){
+                    $inputText = $("#inputWords").val();
+                    $.post("ajax.php",{
+                        option: "enterWord",
+                        word: $inputText
+                    },
+                    function(data, status){ 
+                        alert(data);
+                    });
+                });
+            });
+        </script>
     </head>
     <body id="page-top">
         <!-- Navigation-->
@@ -57,18 +74,19 @@
                     <div class="col-md-10 col-lg-8 mx-auto text-center">
                         <h2 class="text-black mb-5">Words Confirmed!</h2>
                         <h2 class="text-white mb-5">!! If you want to delete a word for the list press it</h2>
-                        <div class="list-group">
-                            <a class="list-group-item list-group-item-action">Dapibus ac facilisis in</a>
-                            <a class="list-group-item list-group-item-action">Morbi leo risus</a>
-                            <a class="list-group-item list-group-item-action">Porta ac consectetur ac</a>
-                            <a class="list-group-item list-group-item-action disabled">Vestibulum at eros</a>
+                        <div class="list-group" id = "ListWords">
+                            <?php 
+                                //Inclusion of the list with the elements of the session
+                                include_once("lists.php");
+                                echo (showWords());
+                            ?>
                         </div>
                     </div>
                 </div>
             </div>
             <br>
             <div class="text-center">
-                <button type="button" class="btn btn-info" id="btnStart">Start the Game!</button>
+                <button type="button" class="btn btn-info" id="btnStart">Start the Game With the Words of the List!</button>
             </div>
             <br>
         </section>
