@@ -5,7 +5,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
         <meta name="description" content="" />
         <meta name="author" content="" />
-        <title>Hangman</title>
+        <title>Hangman Game</title>
         <link rel="icon" type="image/x-icon" href="assets/logo.ico" />
         <!-- Font Awesome icons (free version)-->
         <script src="https://use.fontawesome.com/releases/v6.1.0/js/all.js" crossorigin="anonymous"></script>
@@ -19,41 +19,31 @@
         <!-- Navigation-->
         <nav class="navbar navbar-expand-lg navbar-light fixed-top" id="mainNav">
             <div class="container px-4 px-lg-5">
-                <a class="navbar-brand" href="#page-top">Home</a>
+                <a class="navbar-brand" href="index.html">Home</a>
                 <button class="navbar-toggler navbar-toggler-right" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
                     Menu
                     <i class="fas fa-bars"></i>
                 </button>
                 <div class="collapse navbar-collapse" id="navbarResponsive">
                     <ul class="navbar-nav ms-auto">
-                        <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#about">Start The game</a></li>
                     </ul>
                 </div>
             </div>
         </nav>
-        <!-- Masthead-->
-        <header class="masthead">
-            <div class="container px-4 px-lg-5 d-flex h-100 align-items-center justify-content-center">
-                <div class="d-flex justify-content-center">
-                    <div class="text-center">
-                        <h1 class="mx-auto my-0 text-uppercase">Hangman Game</h1>
-                        <h2 class="text-white-50 mx-auto mt-2 mb-5">A online Game to play with friends</h2>
-                        <a class="btn btn-primary" href="start.php">Start</a>
-                    </div>
-                </div>
-            </div>
-        </header>
         <!-- About-->
         <section class="about-section text-center" id="about">
             <div class="container px-4 px-lg-5">
                 <div class="row gx-4 gx-lg-5 justify-content-center">
                     <div class="col-lg-8">
-                        <h2 class="text-white mb-4">Built with Bootstrap 5, PHP and Jquery</h2>
-                        <p class="text-white-50">
-                            Save from 1 to 10 words to play a game of Hangman online alone or with your friends
-                            <a href="start.php">play here.</a><br>
-                            This project is open source.
-                        </p>
+                        <h2 class="text-white mb-4">Put a word and confirm it</h2>
+                        <div class="form-group">
+                            <input type="text" class="form-control" id="inputWords" aria-describedby="textHelp" placeholder="Enter a Word">
+                            <small id="textHelp" class="form-text text-muted">you need to press enter to confirm the word.</small>
+                        </div>
+                        <br>
+                        <button type="button" class="btn btn-success" id="btnSuccess">Enter</button>
+                        
                     </div>
                 </div>
                 <img class="img-fluid" src="assets/img/ipad.png" alt="..." />
