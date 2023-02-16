@@ -19,13 +19,14 @@
         <!-- Navigation-->
         <nav class="navbar navbar-expand-lg navbar-light fixed-top" id="mainNav">
             <div class="container px-4 px-lg-5">
-                <a class="navbar-brand" href="index.html">Home</a>
+                <a class="navbar-brand" href="index.html">Return Main Page</a>
                 <button class="navbar-toggler navbar-toggler-right" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
                     Menu
                     <i class="fas fa-bars"></i>
                 </button>
                 <div class="collapse navbar-collapse" id="navbarResponsive">
                     <ul class="navbar-nav ms-auto">
+                        <li class="nav-item"><a class="nav-link" href="#page-top">Home</a></li>
                         <li class="nav-item"><a class="nav-link" href="#about">Start The game</a></li>
                     </ul>
                 </div>
@@ -46,8 +47,30 @@
                         
                     </div>
                 </div>
-                <img class="img-fluid" src="assets/img/ipad.png" alt="..." />
+                <br>
             </div>
+        </section>
+        <!--Words-->
+        <section class="signup-section" id="signup">
+            <div class="container px-4 px-lg-5">
+                <div class="row gx-4 gx-lg-5">
+                    <div class="col-md-10 col-lg-8 mx-auto text-center">
+                        <h2 class="text-black mb-5">Words Confirmed!</h2>
+                        <h2 class="text-white mb-5">!! If you want to delete a word for the list press it</h2>
+                        <div class="list-group">
+                            <a class="list-group-item list-group-item-action">Dapibus ac facilisis in</a>
+                            <a class="list-group-item list-group-item-action">Morbi leo risus</a>
+                            <a class="list-group-item list-group-item-action">Porta ac consectetur ac</a>
+                            <a class="list-group-item list-group-item-action disabled">Vestibulum at eros</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <br>
+            <div class="text-center">
+                <button type="button" class="btn btn-info" id="btnStart">Start the Game!</button>
+            </div>
+            <br>
         </section>
         <!-- Footer-->
         <footer class="footer bg-black small text-center text-white-50"><div class="container px-4 px-lg-5">&copy; Sebastixi 2022</div>
