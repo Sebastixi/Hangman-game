@@ -19,33 +19,7 @@ session_start();?>
         <script src="jquery.js"></script>
         <script>
             $(document).ready(function(){ 
-                $("#btnSuccess").click(function(){
-                    $inputText = $("#inputWords").val();
-                    $.post("ajax.php",{
-                        option: "enterWord",
-                        word: $inputText
-                    },
-                    function(data, status){ 
-                        alert(data);
-                    });
-                    location.reload();
-                });
-                $(".wordList").click(function(){
-                    alert("Function in develop wait for updates to do it");
-                });
-                $("#btnErase").click(function(){
-                    $.post("ajax.php",{
-                        option: "eraseWords"
-                    },
-                    function(data, status){ 
-                        alert(data);
-                    });
-                    location.reload();
-                });
-                $("#btnStart").click(function(){
-                    window.open("game.php");
-                    window.close();
-                });
+                
             });
         </script>
     </head>
@@ -53,7 +27,7 @@ session_start();?>
         <!-- Navigation-->
         <nav class="navbar navbar-expand-lg navbar-light fixed-top" id="mainNav">
             <div class="container px-4 px-lg-5">
-                <a class="navbar-brand" href="index.html">Return Main Page</a>
+                <a class="navbar-brand" href="start.php">Return Start Page</a>
                 <button class="navbar-toggler navbar-toggler-right" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
                     Menu
                     <i class="fas fa-bars"></i>
@@ -74,7 +48,7 @@ session_start();?>
                         <h2 class="text-white mb-4">Put a word and confirm it</h2>
                         <div class="form-group">
                             <input type="text" class="form-control" id="inputWords" aria-describedby="textHelp" placeholder="Enter a Word">
-                            <small id="textHelp" class="form-text text-muted">you need to press Enter to confirm the word.</small>
+                            <small id="textHelp" class="form-text text-muted">you need to press enter to confirm the word.</small>
                         </div>
                         <br>
                         <button type="button" class="btn btn-success" id="btnSuccess">Enter</button>
@@ -84,34 +58,7 @@ session_start();?>
                 <br>
             </div>
         </section>
-        <!--Words-->
-        <section class="signup-section" id="signup">
-            <div class="container px-4 px-lg-5">
-                <div class="row gx-4 gx-lg-5">
-                    <div class="col-md-10 col-lg-8 mx-auto text-center">
-                        <h2 class="text-black mb-5">Words Confirmed!</h2>
-                        <h2 class="text-white mb-5">!! If you want to delete a word for the list press it</h2>
-                        <div class="list-group" id = "ListWords">
-                            <?php 
-                                //Inclusion of the list with the elements of the session
-                                include_once("lists.php");
-                                echo (showWords());
-                            ?>
-                        </div>
-                        
-                    </div>
-                </div>
-            </div>
-            <br>
-            <div class="text-center">
-                <button type="button" class="btn btn-danger" id="btnErase">Press this button to delete all the words!</button>
-            </div>
-            <br>
-            <div class="text-center">
-                <button type="button" class="btn btn-info" id="btnStart">Start the Game With the Words of the List!</button>
-            </div>
-            <br>
-        </section>
+        
         <!-- Footer-->
         <footer class="footer bg-black small text-center text-white-50"><div class="container px-4 px-lg-5">&copy; Sebastixi 2022</div>
             <div class="container px-4 px-lg-5">Github <a href="https://github.com/Sebastixi" target="_blank">Sebastixi</a></div></footer>
