@@ -19,5 +19,17 @@ if (isset($_POST['option']) && $_POST['option']=="enterWord"){
     }
     echo($message);
 }
+if (isset($_POST['option']) && $_POST['option']=="eraseWords"){
+    $message = "Words erased";
+    if (!isset($_SESSION['Words'])) {
+
+    } else {
+        $_SESSION['Words'] = '';
+        session_unset();
+        session_destroy();
+        
+    }
+    echo($message);
+}
 
 ?>

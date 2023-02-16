@@ -28,6 +28,19 @@ session_start();?>
                     function(data, status){ 
                         alert(data);
                     });
+                    location.reload();
+                });
+                $(".wordList").click(function(){
+                    alert("Function in develop wait for updates to do it");
+                });
+                $("#btnErase").click(function(){
+                    $.post("ajax.php",{
+                        option: "eraseWords"
+                    },
+                    function(data, status){ 
+                        alert(data);
+                    });
+                    location.reload();
                 });
             });
         </script>
@@ -81,8 +94,13 @@ session_start();?>
                                 echo (showWords());
                             ?>
                         </div>
+                        
                     </div>
                 </div>
+            </div>
+            <br>
+            <div class="text-center">
+                <button type="button" class="btn btn-danger" id="btnErase">Press this button to delete all the words!</button>
             </div>
             <br>
             <div class="text-center">

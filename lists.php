@@ -8,7 +8,7 @@ function showWords(){
         $list = "";
         $countWords = count($_SESSION['Words']);
         for ($i = 0; $i < $countWords; $i++) {
-            $list.= '<a class="list-group-item list-group-item-action wordList">'.$_SESSION['Words'][$i].'</a>' ;
+            $list.= '<button class="list-group-item list-group-item-action wordList" id="'.$_SESSION['Words'][$i].'">'.$_SESSION['Words'][$i].'</button>' ;
         }
         echo($list);
         
