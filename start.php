@@ -94,7 +94,7 @@ session_start();?>
                         <div class="list-group" id = "ListWords">
                             <?php 
                                 //Inclusion of the list with the elements of the session
-                                include_once("lists.php");
+                                include_once("Lists-Tables.php");
                                 echo (showWords());
                             ?>
                         </div>

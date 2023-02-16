@@ -97,6 +97,7 @@ session_start();?>
                 $("#btnZ").click(function(){
                      $(this).hide();
                 });
+
             });
         </script>
     </head>
@@ -111,7 +112,15 @@ session_start();?>
                 </button>
                 <div class="collapse navbar-collapse" id="navbarResponsive">
                     <ul class="navbar-nav ms-auto">
-                        <li class="nav-item"><a class="nav-link">Next Word</a></li>
+                        <li class="nav-item"><a class="nav-link" id = "countWordsRemaining">
+                            Next Word (
+                            <?php 
+                                //Inclusion of the counter
+                                include_once("Lists-Tables.php");
+                                echo (returnCountWords());
+                            ?>
+                            )</a></li>
+
                         <li class="nav-item"><a class="nav-link">End The game</a></li>
                     </ul>
                 </div>
@@ -125,18 +134,16 @@ session_start();?>
                         <h2 class="text-white mb-4">Hangman Game</h2>
                         <img src="assets/hangman0.png" class="img-fluid" alt="Responsive image" width="250" height="300" id="hangmanImg">
                         <br>
-                        <table class="table table-bordered table-dark">
-                            <thead>
-                                <tr>
-                                    <td>A</td>
-                                    <td>R</td>
-                                    <td>B</td>
-                                    <td>O</td>
-                                    <td>L</td>
-                                </tr>
-                            </thead>
+                        <table class="table table-bordered table-dark" id="tableWords">
+                            <?php 
+                                //Inclusion of the word hidden in the table
+                                include_once("Lists-Tables.php");
+                                echo (printWord());
+                            ?>
+                               
                         </table>
                         <br>
+
                         <table class="table table-striped table-dark">
                             <tbody>
                                 <tr>
@@ -192,4 +199,24 @@ session_start();?>
         <script src="js/scripts.js"></script>
         <script src="https://cdn.startbootstrap.com/sb-forms-latest.js"></script>
     </body>
+    <!-- Modal End The Game-->
+    <div class="modal fade bd-example-modal-sm" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-sm">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">End Game</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    ...
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-primary">Save changes</button>
+                </div>           
+            </div>
+        </div>
+    </div>
 </html>
